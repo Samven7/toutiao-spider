@@ -82,11 +82,11 @@ def save_image(item):
 def main(offset):
     json = get_page(offset)
     for item in get_images(json):
-        print(item)
         save_image(item)
 
 
 if __name__ == '__main__':
     groups = [x * 20 for x in range(1, 5)]
+    os.chdir('../weibo_ajax/images')    # 提前切换到图片存放目录
     for val in groups:
         main(val)
